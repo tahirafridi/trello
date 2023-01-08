@@ -13,9 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lists', function (Blueprint $table) {
+        Schema::create('cards', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('board_id');
+            $table->string('title', 255);
+            $table->longText('description');
+            $table->softDeletes($column = 'deleted_at');
             $table->timestamps();
+
+            $table->foreign('board_id')->references('id')->on('boards');
         });
     }
 
@@ -26,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lists');
+        Schema::dropIfExists('cards');
     }
 };

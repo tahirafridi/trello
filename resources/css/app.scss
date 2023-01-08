@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+body {
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+}
+
+.btn {
+    background-color: rgb(15, 143, 247);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &--delete {
+        background-color: rgb(255, 86, 86);
+    }
+}
+
+.board {
+    background-color: #ffffef;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 6px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(255, 216, 149);
+        font-size: 20px;
+        padding: 20px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+
+    &__body {
+        padding: 20px;
+    }
+}
+
+.card {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin: 15px 0;
+    border-radius: 6px;
+    min-height: 100px;
+    background-color: #fff;
+
+    &__header{
+        background-color: rgb(231, 229, 229);
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        color: #333;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 5px;
+    }
+
+    &__body{
+        color: #333;
+        padding: 5px;
+    }
+}
