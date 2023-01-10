@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers\Api;
 
+use Exception;
 use App\Models\Board;
 use Illuminate\Http\Request;
 use App\Http\Requests\BoardRequest;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\BoardCollection;
 use App\Http\Resources\BoardResource;
+use App\Http\Resources\BoardCollection;
 
 class BoardController extends Controller
 {
     public function index()
     {
         try {
-            return new BoardCollection(Board::select('id', 'title')->get());
+            return new BoardCollection(Board::select('id', 'title')->latest()->get());
         } catch (\Throwable $th) {
             Log::error($th->getMessage());
 
@@ -54,13 +55,18 @@ class BoardController extends Controller
         try {
             $board = Board::findOrFail($id);
 
+            if (!$board) {
+                throw new Exception("Board not found.");
+            }
+
+            $board->cards()->delete();
             $board->delete();
 
             return response()->json([
                 'success'   => true,
                 'code'      => 200,
                 'message'   => "Board deleted successfully.",
-            ], 500);
+            ], 200);
         } catch (\Throwable $th) {
             return response()->json([
                 'success'   => false,

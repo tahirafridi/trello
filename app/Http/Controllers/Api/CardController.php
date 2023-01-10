@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CardResource;
 use App\Http\Resources\CardCollection;
+use Exception;
 
 class CardController extends Controller
 {
@@ -63,8 +64,28 @@ class CardController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy(Board $board, $id)
     {
-        //
+        try {
+            $card = $board->cards()->where('id', $id)->first();
+
+            if (!$card) {
+                throw new Exception("Card not found.");
+            }
+
+            $card->delete();
+
+            return response()->json([
+                'success'   => true,
+                'code'      => 200,
+                'message'   => "Card deleted successfully.",
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'success'   => false,
+                'code'      => 500,
+                'message'   => "Internal server error.",
+            ], 500);
+        }
     }
 }

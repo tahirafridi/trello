@@ -8,66 +8,164 @@
 body {
     padding: 20px;
 }
+p {
+    font-size: 14px;
+    margin: 5px 0;
+}
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px;
+.text-center {
+    text-align: center;
+}
+.text-muted {
+    color: #aeaeae;
+}
+.text-danger {
+    color: #f85a5a;
+}
+.text-success {
+    color: #0aa30a;
+}
+
+.lh-0 {
+    line-height: 0;
 }
 
 .btn {
-    background-color: rgb(15, 143, 247);
+    background-color: #5c5c5c;
     color: #fff;
     font-weight: bold;
     border: none;
     border-radius: 4px;
     padding: 5px 10px;
     cursor: pointer;
+    line-height: 1;
 
     &--delete {
         background-color: rgb(255, 86, 86);
     }
+
+    svg {
+        fill: #fff;
+    }
+}
+
+.loading {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #a1a1a1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 20rem);
+    grid-gap: 16px;
+    justify-content: center;
 }
 
 .board {
     background-color: #ffffef;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     border-radius: 6px;
+    align-self: start;
 
     &__header {
         display: flex;
         justify-content: space-between;
         background-color: rgb(255, 216, 149);
         font-size: 20px;
-        padding: 20px;
+        padding: 10px 20px;
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
     }
 
     &__body {
         padding: 20px;
+
+        &__form {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+
+            &--vertical {
+                flex-direction: column;
+            }
+
+            input[type=text] {
+                width: 100%;
+                border: none;
+                border-radius: 6px;
+                background-color: #fff;
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                margin-right: 10px;
+                padding: 5px 10px;
+
+                &:focus-visible {
+                    outline: none;
+                }
+
+                &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: #d1d1d1;
+                    opacity: 1; /* Firefox */
+                }
+                  
+                &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: #d1d1d1;
+                }
+                  
+                &::-ms-input-placeholder { /* Microsoft Edge */
+                    color: #d1d1d1;
+                }
+            }
+
+            textarea {
+                width: 100%;
+                border: none;
+                border-radius: 6px;
+                background-color: #fff;
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                margin: 10px 0;
+                padding: 5px 10px;
+                resize:vertical;
+
+                &:focus-visible {
+                    outline: none;
+                }
+
+                &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: #d1d1d1;
+                    opacity: 1; /* Firefox */
+                }
+                  
+                &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: #d1d1d1;
+                }
+                  
+                &::-ms-input-placeholder { /* Microsoft Edge */
+                    color: #d1d1d1;
+                }
+            }
+        }
     }
 }
 
 .card {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     margin: 15px 0;
-    border-radius: 6px;
-    min-height: 100px;
-    background-color: #fff;
 
     &__header{
+        display: flex;
+        justify-content: space-between;
         background-color: rgb(231, 229, 229);
-        border-top-left-radius: 6px;
-        border-top-right-radius: 6px;
         color: #333;
-        font-size: 18px;
-        font-weight: bold;
-        padding: 5px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        border-radius: 6px;
     }
 
     &__body{
         color: #333;
-        padding: 5px;
+        margin-top: 40px;
     }
 }
