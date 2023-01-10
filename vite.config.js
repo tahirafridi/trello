@@ -10,4 +10,8 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        https: false,
+        host: 'trello.test',
+    },
 });
