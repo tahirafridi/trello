@@ -19,6 +19,7 @@ class CardResource extends JsonResource
             'board_id'      => $this->board_id,
             'title'         => $this->title,
             'description'   => $this->description,
+            'order_no'      => $this->order_no,
         ];
     }
 }

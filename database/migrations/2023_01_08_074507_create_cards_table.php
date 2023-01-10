@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('board_id');
             $table->string('title', 255);
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->softDeletes($column = 'deleted_at');
             $table->timestamps();
 

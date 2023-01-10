@@ -13,7 +13,7 @@ class Card extends Model
     protected $table = "cards";
 
     protected $fillable = [
-        'board_id', 'title', 'description',
+        'board_id', 'title', 'description', 'order_no',
     ];
 
     public function board()

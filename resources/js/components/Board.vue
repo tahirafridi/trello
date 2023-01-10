@@ -6,7 +6,7 @@
         <div class="board__body">
             <form @submit.prevent="addBoard" class="board__body__form">
                 <input v-model="boardTitle" type="text" placeholder="Board Title" required>
-                <button type="submit" class="btn">Add</button>
+                <button type="submit" class="btn m-0">Add</button>
             </form>
 
             <p v-if="success" class="text-center text-success">{{ success }}</p>
@@ -34,7 +34,7 @@ import Card from './Card.vue';
 
 export default {
     components: {
-        "card": Card,
+        "card": Card
     },
     data() {
         return {
@@ -100,6 +100,6 @@ export default {
     },
     mounted() {
         this.getBoards();
-    }, 
+    },
 }
 </script>

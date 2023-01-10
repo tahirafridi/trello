@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('boards', BoardController::class);
 Route::apiResource('boards.cards', CardController::class);
+Route::put('cards/update/order', [CardController::class, 'updateOrder']);

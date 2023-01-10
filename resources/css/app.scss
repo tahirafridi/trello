@@ -8,6 +8,17 @@
 body {
     padding: 20px;
 }
+a {
+    color: #333;
+    text-decoration: none;
+
+    svg {
+        fill: #f58888;
+    }
+}
+a:hover {
+    color: #0482e9;
+}
 p {
     font-size: 14px;
     margin: 5px 0;
@@ -20,7 +31,7 @@ p {
     color: #aeaeae;
 }
 .text-danger {
-    color: #f85a5a;
+    color: #ff5656;
 }
 .text-success {
     color: #0aa30a;
@@ -28,6 +39,10 @@ p {
 
 .lh-0 {
     line-height: 0;
+}
+
+.m-0 {
+    margin: 0 !important;
 }
 
 .btn {
@@ -39,9 +54,10 @@ p {
     padding: 5px 10px;
     cursor: pointer;
     line-height: 1;
+    margin: 5px 0;
 
     &--delete {
-        background-color: rgb(255, 86, 86);
+        background-color: #ff5656;
     }
 
     svg {
@@ -109,11 +125,11 @@ p {
                     color: #d1d1d1;
                     opacity: 1; /* Firefox */
                 }
-                  
+
                 &:-ms-input-placeholder { /* Internet Explorer 10-11 */
                     color: #d1d1d1;
                 }
-                  
+
                 &::-ms-input-placeholder { /* Microsoft Edge */
                     color: #d1d1d1;
                 }
@@ -137,11 +153,11 @@ p {
                     color: #d1d1d1;
                     opacity: 1; /* Firefox */
                 }
-                  
+
                 &:-ms-input-placeholder { /* Internet Explorer 10-11 */
                     color: #d1d1d1;
                 }
-                  
+
                 &::-ms-input-placeholder { /* Microsoft Edge */
                     color: #d1d1d1;
                 }

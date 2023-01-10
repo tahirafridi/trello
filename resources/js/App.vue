@@ -2,10 +2,6 @@
     <div class="grid">
         <board />
     </div>
-
-    <modal name="my-first-modal">
-        This is my first modal
-    </modal>
 </template>
 
 <script>
